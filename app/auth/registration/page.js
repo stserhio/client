@@ -1,7 +1,24 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
+import Modal from "../../../components/modal"
+import {useState} from 'react'
 
 export default function Registration() {
+
+    const [showModal, setShowModal] = useState(false)
+
+    const handlerModalButton = () => {
+
+        setShowModal(false)
+
+    }
+
+    const handlerRegistration = () => {
+
+        setShowModal(true)
+
+    }
 
     return <div
         className='flex h-screen w-full bg-white dark:bg-slate-800 md:bg-slate-50 md:dark:bg-slate-900 items-center justify-center md:p-5'>
@@ -27,15 +44,6 @@ export default function Registration() {
                             priority
                         />
                         <span className='text-lg font-bold text-black dark:text-white'>Instagram</span>
-                        {/*or png text logo*/}
-                        {/*<Image*/}
-                        {/*    src="/images/inst-text.png"*/}
-                        {/*    alt="Instagram Text Logo"*/}
-                        {/*    className=''*/}
-                        {/*    width={124}*/}
-                        {/*    height={26}*/}
-                        {/*    priority*/}
-                        {/*/>*/}
                     </div>
                     <form className='grid mt-4 gap-4'>
                         <input
@@ -55,13 +63,15 @@ export default function Registration() {
                             type='password' name='password'
                             placeholder='Password'/>
 
-                        <button
-                            className='hover:scale-105 hover:shadow-lg ease-in-out transition duration-300 py-3 px-4 rounded-lg \
+
+                    </form>
+                    <button
+
+                        className='w-full mt-4 hover:scale-105 hover:shadow-lg ease-in-out transition duration-300 py-3 px-4 rounded-lg \
                             bg-gradient-to-r from-amber-500 dark:from-purple-700 from-0% via-orange-600 dark:via-cyan-700 via-30% via-pink-500 dark:via-blue-600 via-60% to-fuchsia-700 dark:to-violet-800 to-100% ... \
                             text-lg text-white '
-                            onClick={''}>Sign In
-                        </button>
-                    </form>
+                        onClick={handlerRegistration}>Sign In
+                    </button>
 
                     {/*divider or*/}
                     <div class="flex items-center justify-center mt-6">
@@ -85,12 +95,32 @@ export default function Registration() {
                         />Sign in via Google
                     </button>
                     <div className='flex justify-center mt-4'>
-                        <Link href='#' className='text-indigo-500 hover:text-indigo-800 dark:hover:text-indigo-200 font-medium underline decoration-solid'>Have an account? Login</Link>
+                        <Link href='/auth/login'
+                              className='text-indigo-500 hover:text-indigo-800 dark:hover:text-indigo-200 font-medium underline decoration-solid'>Have
+                            an account? Login</Link>
                     </div>
 
                 </div>
 
             </div>
         </div>
+        {
+            showModal ?
+                <Modal>
+                    <div className='text-center'>
+                        <h2 className='font-bold'>Completion of registration</h2>
+                        <p className='mt-2 text-slate-500 dark:text-slate-300 text-sm'>An account confirmation email has been sent to the
+                            email address you provided. <br/>
+                            Follow it to complete the registration</p>
+                        <button onClick={handlerModalButton}
+                                className='py-2 px-4 bg-green-500 text-white rounded-md mt-4'>Ok
+                        </button>
+                    </div>
+
+                </Modal>
+                :
+                ''
+        }
+
     </div>
 }
