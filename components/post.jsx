@@ -1,5 +1,6 @@
 'use client'
 import PostImage from "@/components/postImage";
+import Image from "next/image";
 export default function Post({post}) {
 
 
@@ -24,9 +25,33 @@ export default function Post({post}) {
         resulTimeString = `${postCreatedAt.getDate()} ${months[postCreatedAt.getMonth()]} ${postCreatedAt.getFullYear()} `
     }
 
+    const imageLoader = ({src, width, quality}) => {
+        return `${src}`
+    }
+
+    const imageStyle = {
+        borderRadius: '50%',
+        border: "1px solid #b1afde",
+        objectFit: 'cover',
+        objectPosition: 'center'
+    }
+
     return(
-        <div className=''>
-            <PostImage images={post.images}/>
+        <div className='w-full h-full'>
+            <div className='flex items-center gap-2 mt-4 justify-between'>
+                <div className='flex items-center gap-2'>
+                    <Image src={post.user.avatar} style={imageStyle} loader={imageLoader} alt='Avatar' width={32} height={32}/>
+                    <span>{post.user.firstName} {post.user.lastName}</span>
+                </div>
+                <span>{resulTimeString}</span>
+            </div>
+
+
+            <div className='h-4/5 overflow-hidden'>
+                <PostImage images={post.images}/>
+            </div>
+
+
         </div>
     )
 }
