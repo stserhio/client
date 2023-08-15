@@ -1,166 +1,153 @@
-'use client'
+
 import Post from '../../components/post'
 
 export default function Flow() {
 
     const posts = [
-        // {
-        //     "id": 5,
-        //     "description": "Текст какой-то",
-        //     "createdAt": "2023-08-12T20:14:17.152Z",
-        //     "images": [
-        //         "https://instagram.lern.dev/storage/users/6/gallery/7679e041-ed84-494c-ac7f-ee879e43e5f8.jpg",
-        //         "https://instagram.lern.dev/storage/users/6/gallery/1b06d46a-1a28-4f18-9508-0a2458e6c5ec.jpg"
-        //     ],
-        //     "user": {
-        //         "id": 6,
-        //         "firstName": "Ryan",
-        //         "lastName": "Gosling",
-        //         "avatar": "https://instagram.lern.dev/storage/users/6/avatar/d8d74f86-3bad-43ba-af03-a3469a9011b1.png"
-        //     }
-        // },
         {
-            "id": 7,
-            "description": "Текст какой-то",
-            "createdAt": "2023-08-12T20:15:06.100Z",
+            "id": 47,
+            "description": "Lorem ipsum ",
+            "createdAt": "2023-08-12T12:13:16.330Z",
             "images": [
-                "https://instagram.lern.dev/storage/users/6/gallery/ed9fd72f-a697-4d58-a030-f8559ccbba62.jpg",
-                "https://instagram.lern.dev/storage/users/6/gallery/b26f2dc1-63a4-4fa5-833f-d584426ccb62.jpg"
+                "https://instagram.lern.dev/storage/users/51/gallery/3cc30033-1093-4d84-96c6-fa0c895cfe1c.jpg",
+                "https://instagram.lern.dev/storage/users/51/gallery/d5ce0e7f-3c81-49b6-b8de-cd59a1ed81e5.jpg",
+                "https://instagram.lern.dev/storage/users/51/gallery/a026f725-1646-4422-9c22-8b0cba06b54c.jpg"
             ],
             "user": {
-                "id": 6,
+                "id": 51,
                 "firstName": "Ryan",
                 "lastName": "Gosling",
-                "avatar": "https://instagram.lern.dev/storage/users/6/avatar/d8d74f86-3bad-43ba-af03-a3469a9011b1.png"
+                "avatar": "https://instagram.lern.dev/storage/users/51/avatar/429898dd-c88b-4ade-9b47-1f01e5cb3f02.jpeg"
             }
         },
         {
-            "id": 6,
-            "description": "Текст какой-то",
-            "createdAt": "2023-08-12T20:14:31.093Z",
+            "id": 48,
+            "description": "Lorem ipsum ",
+            "createdAt": "2023-08-12T12:13:22.075Z",
             "images": [
-                "https://instagram.lern.dev/storage/users/6/gallery/233ec548-2da8-4e7b-a034-1350f025bb27.jpg",
-                "https://instagram.lern.dev/storage/users/6/gallery/cf1014cb-6b42-493e-a76d-dbc330454439.jpg"
+                "https://instagram.lern.dev/storage/users/51/gallery/f1b42828-fec1-4896-b6d4-eedbea5dc718.jpg",
+                "https://instagram.lern.dev/storage/users/51/gallery/e2c82644-9fb1-49e3-8046-a80be7a34ac6.jpg"
             ],
             "user": {
-                "id": 6,
+                "id": 51,
                 "firstName": "Ryan",
                 "lastName": "Gosling",
-                "avatar": "https://instagram.lern.dev/storage/users/6/avatar/d8d74f86-3bad-43ba-af03-a3469a9011b1.png"
+                "avatar": "https://instagram.lern.dev/storage/users/51/avatar/429898dd-c88b-4ade-9b47-1f01e5cb3f02.jpeg"
             }
         },
         {
-            "id": 14,
-            "description": "Текст какой-то",
-            "createdAt": "2023-08-12T20:47:39.936Z",
+            "id": 49,
+            "description": "Lorem ipsum ",
+            "createdAt": "2023-08-12T12:13:29.575Z",
             "images": [
-                "https://instagram.lern.dev/storage/users/6/gallery/5465b092-689e-4126-ac00-55794aec32ed.jpg"
+                "https://instagram.lern.dev/storage/users/51/gallery/c0c0c579-e7d9-4158-b907-09651b807b1a.jpg",
+                "https://instagram.lern.dev/storage/users/51/gallery/894d222c-f7ed-44d3-8705-a878db4bc08e.jpg",
+                "https://instagram.lern.dev/storage/users/51/gallery/74eef0de-6288-4a91-a0d8-38dc449b0389.jpg"
             ],
             "user": {
-                "id": 6,
+                "id": 51,
                 "firstName": "Ryan",
                 "lastName": "Gosling",
-                "avatar": "https://instagram.lern.dev/storage/users/6/avatar/d8d74f86-3bad-43ba-af03-a3469a9011b1.png"
+                "avatar": "https://instagram.lern.dev/storage/users/51/avatar/429898dd-c88b-4ade-9b47-1f01e5cb3f02.jpeg"
             }
         },
         {
-            "id": 8,
-            "description": "Текст какой-то",
-            "createdAt": "2023-08-12T20:15:29.346Z",
+            "id": 50,
+            "description": "Lorem ipsum ",
+            "createdAt": "2023-08-12T12:13:36.944Z",
             "images": [
-                "https://instagram.lern.dev/storage/users/6/gallery/8cd7ab20-c759-4d61-bf91-a8f89c36589d.jpg",
-                "https://instagram.lern.dev/storage/users/6/gallery/36637c44-51a2-4178-bda6-b91131801866.jpg"
+                "https://instagram.lern.dev/storage/users/51/gallery/9d2bc03b-765e-47e6-9143-d3fcbc1f2fe1.jpg",
+                "https://instagram.lern.dev/storage/users/51/gallery/23fd4366-3c38-45c6-8a6b-8a125781168a.jpg",
+                "https://instagram.lern.dev/storage/users/51/gallery/04d03b44-fc7b-4806-9029-4f2ca45ab7a6.jpg"
             ],
             "user": {
-                "id": 6,
+                "id": 51,
                 "firstName": "Ryan",
                 "lastName": "Gosling",
-                "avatar": "https://instagram.lern.dev/storage/users/6/avatar/d8d74f86-3bad-43ba-af03-a3469a9011b1.png"
+                "avatar": "https://instagram.lern.dev/storage/users/51/avatar/429898dd-c88b-4ade-9b47-1f01e5cb3f02.jpeg"
             }
         },
         {
-            "id": 9,
-            "description": "Текст какой-то",
-            "createdAt": "2023-08-12T20:15:39.514Z",
+            "id": 51,
+            "description": "Lorem ipsum ",
+            "createdAt": "2023-08-12T12:13:49.977Z",
             "images": [
-                "https://instagram.lern.dev/storage/users/6/gallery/4c449d75-fb66-40f4-9f13-421fc1b42202.jpg",
-                "https://instagram.lern.dev/storage/users/6/gallery/47dae211-987b-463f-b0f6-f4c042deaa34.jpg"
+                "https://instagram.lern.dev/storage/users/51/gallery/209877a7-29de-4c5f-a365-f55e8a4b2e1b.jpg",
+                "https://instagram.lern.dev/storage/users/51/gallery/58b816cf-d39e-4792-a9a1-f24dae53b8f2.jpg"
             ],
             "user": {
-                "id": 6,
+                "id": 51,
                 "firstName": "Ryan",
                 "lastName": "Gosling",
-                "avatar": "https://instagram.lern.dev/storage/users/6/avatar/d8d74f86-3bad-43ba-af03-a3469a9011b1.png"
+                "avatar": "https://instagram.lern.dev/storage/users/51/avatar/429898dd-c88b-4ade-9b47-1f01e5cb3f02.jpeg"
             }
         },
         {
-            "id": 10,
-            "description": "Текст какой-то",
-            "createdAt": "2023-08-12T20:15:54.504Z",
+            "id": 52,
+            "description": "Lorem ipsum ",
+            "createdAt": "2023-08-12T12:13:57.647Z",
             "images": [
-                "https://instagram.lern.dev/storage/users/6/gallery/97ad125f-4165-4372-b6a5-8d90883dae76.jpg",
-                "https://instagram.lern.dev/storage/users/6/gallery/5a48ca57-dfc9-4b46-b4fc-0f10535b5a89.jpg"
+                "https://instagram.lern.dev/storage/users/51/gallery/58e202f5-df66-4682-80af-e645a6442a71.jpg",
+                "https://instagram.lern.dev/storage/users/51/gallery/e22d44a1-f533-4403-9b23-78918d1ba9ff.jpg"
             ],
             "user": {
-                "id": 6,
+                "id": 51,
                 "firstName": "Ryan",
                 "lastName": "Gosling",
-                "avatar": "https://instagram.lern.dev/storage/users/6/avatar/d8d74f86-3bad-43ba-af03-a3469a9011b1.png"
+                "avatar": "https://instagram.lern.dev/storage/users/51/avatar/429898dd-c88b-4ade-9b47-1f01e5cb3f02.jpeg"
             }
         },
         {
-            "id": 11,
-            "description": "Текст какой-то",
-            "createdAt": "2023-08-12T20:16:10.751Z",
+            "id": 53,
+            "description": "Lorem ipsum ",
+            "createdAt": "2023-08-12T12:14:05.210Z",
             "images": [
-                "https://instagram.lern.dev/storage/users/6/gallery/bb71fccf-cd8f-420f-9312-88447a1de203.jpg",
-                "https://instagram.lern.dev/storage/users/6/gallery/3a3e3213-0a47-4bf7-84b2-24c426376c6e.jpg"
+                "https://instagram.lern.dev/storage/users/51/gallery/bdd9e7d1-1f17-44e8-8884-c6656a654a14.jpg",
+                "https://instagram.lern.dev/storage/users/51/gallery/a4f40486-60cd-4f42-b5c2-4a60d61a49e6.jpg",
+                "https://instagram.lern.dev/storage/users/51/gallery/d9150986-8362-4219-8ace-d05b7fed0251.jpg"
             ],
             "user": {
-                "id": 6,
+                "id": 51,
                 "firstName": "Ryan",
                 "lastName": "Gosling",
-                "avatar": "https://instagram.lern.dev/storage/users/6/avatar/d8d74f86-3bad-43ba-af03-a3469a9011b1.png"
+                "avatar": "https://instagram.lern.dev/storage/users/51/avatar/429898dd-c88b-4ade-9b47-1f01e5cb3f02.jpeg"
             }
         },
         {
-            "id": 12,
-            "description": "Текст какой-то",
-            "createdAt": "2023-08-12T20:16:38.845Z",
+            "id": 54,
+            "description": "Lorem ipsum ",
+            "createdAt": "2023-08-12T12:14:17.811Z",
             "images": [
-                "https://instagram.lern.dev/storage/users/6/gallery/fe505416-e5e7-4683-9ac4-b5f6d6d63c72.jpg",
-                "https://instagram.lern.dev/storage/users/6/gallery/86c29a0b-a1e2-42b4-bd43-fb6fa4476acf.jpg"
+                "https://instagram.lern.dev/storage/users/51/gallery/17b0cf9b-96d6-49ed-86db-45644e2fd11b.jpg",
+                "https://instagram.lern.dev/storage/users/51/gallery/cbb91b19-0ce4-4204-9ba1-6d3fdb87b5ba.jpg"
             ],
             "user": {
-                "id": 6,
+                "id": 51,
                 "firstName": "Ryan",
                 "lastName": "Gosling",
-                "avatar": "https://instagram.lern.dev/storage/users/6/avatar/d8d74f86-3bad-43ba-af03-a3469a9011b1.png"
+                "avatar": "https://instagram.lern.dev/storage/users/51/avatar/429898dd-c88b-4ade-9b47-1f01e5cb3f02.jpeg"
             }
         },
         {
-            "id": 13,
-            "description": "Текст какой-то",
-            "createdAt": "2023-08-12T20:17:11.254Z",
+            "id": 55,
+            "description": "Lorem ipsum ",
+            "createdAt": "2023-08-12T12:14:25.830Z",
             "images": [
-                "https://instagram.lern.dev/storage/users/6/gallery/23338ec8-2c88-4bd4-9cd3-66dea339ea24.jpg",
-                "https://instagram.lern.dev/storage/users/6/gallery/73553e51-1847-49e4-8c37-5ba6d6dfef5a.jpg"
+                "https://instagram.lern.dev/storage/users/51/gallery/120288c4-bba3-47a9-9ccf-21d71060323c.jpg",
+                "https://instagram.lern.dev/storage/users/51/gallery/f1b42828-fec1-4896-b6d4-eedbea5dc718.jpg"
             ],
             "user": {
-                "id": 6,
+                "id": 51,
                 "firstName": "Ryan",
                 "lastName": "Gosling",
-                "avatar": "https://instagram.lern.dev/storage/users/6/avatar/d8d74f86-3bad-43ba-af03-a3469a9011b1.png"
+                "avatar": "https://instagram.lern.dev/storage/users/51/avatar/429898dd-c88b-4ade-9b47-1f01e5cb3f02.jpeg"
             }
-        }
+        },
     ]
 
-
     return (
-        <div className='squareGrid2'>
-            {posts.map(post => <Post key={post.id} post={post}/>)}
-
-
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full p-4 gap-4 sm:p-8 sm:gap-8 lg:p-12 lg:gap-12'>
+            {posts.map( post => <Post key={post.id} post={post}/> )}
         </div>
     )
 }
