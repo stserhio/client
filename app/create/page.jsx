@@ -58,8 +58,9 @@ export default function Create() {
                 <div
                     className='min-h-[100px] overflow-hidden flex flex-wrap gap-4 items-center justify-center bg-slate-300 rounded-md dark:bg-slate-700 text-black dark:text-white p-4 border-2 border-dashed border-slate-400 dark:border-slate-600'>
                     {
+                        //todo img key need to add, not index, something unique, install bcrypt and use it as a key
                         uploadedFiles.length > 0 ? (
-                            uploadedFiles.map((file) => (<img src={URL.createObjectURL(file)}
+                            uploadedFiles.map((file, index) => (<img key={} src={URL.createObjectURL(file)}
                                                               className='h-16 w-16 object-cover object-center rounded-md'/>))
                         ) : (
                             <span>No files selected</span>
