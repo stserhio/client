@@ -29,9 +29,11 @@ export default function Post({post}) {
         return `${src}`
     }
 
-    const imageStyle = {
+    const imageAvatarStyle = {
         borderRadius: '50%',
         border: "1px solid #b1afde",
+        // width: '460px',
+        // height: '460px',
         objectFit: 'cover',
         objectPosition: 'center'
     }
@@ -39,11 +41,12 @@ export default function Post({post}) {
     return(
         <div className='w-full h-full'>
             <div className='flex items-center gap-2 mt-4 justify-between'>
-                <div className='flex items-center gap-2'>
-                    <Image src={post.user.avatar} style={imageStyle} loader={imageLoader} alt='Avatar' width={32} height={32}/>
+
+                <div className='flex items-center gap-2 mb-2 mx-2'>
+                    <Image src={post.user.avatar} style={imageAvatarStyle} loader={imageLoader} alt='Avatar' width={32} height={32}/>
                     <span>{post.user.firstName} {post.user.lastName}</span>
                 </div>
-                <span>{resulTimeString}</span>
+                <span className='mx-4'>{resulTimeString}</span>
             </div>
 
 

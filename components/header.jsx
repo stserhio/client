@@ -1,13 +1,25 @@
 'use client'
 import {Menu, Transition} from '@headlessui/react'
-import {Fragment} from 'react'
-import {UserIcon, UserCircleIcon, ArrowRightOnRectangleIcon} from '@heroicons/react/20/solid'
+import {Fragment, useState} from 'react'
+import {UserCircleIcon} from '@heroicons/react/20/solid'
 import Image from "next/image";
-import { redirect } from 'next/navigation'
-
+import LogoutModal from "@/components/LogoutModal";
 
 
 export default function Header({children}) {
+
+    let [isOpen, setIsOpen] = useState(true)
+
+
+    function openLogoutModal() {
+        console.log('Logout')
+
+        setIsOpen(true)
+        return(
+            <LogoutModal/>
+        )
+
+    }
 
     return (
         <div
@@ -74,7 +86,7 @@ export default function Header({children}) {
                             <Menu.Item>
                                 {({active}) => (
                                     <button
-                                        onClick='window.location.href="https://instagram.lern.dev/api/v1/logout"'
+                                        onClick={openLogoutModal}
                                         className={`${
                                             active ? 'bg-violet-500 text-white' : 'text-gray-900'
                                         } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
