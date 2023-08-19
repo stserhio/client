@@ -3,22 +3,26 @@ import Image from 'next/image'
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { UsersIcon, ArrowRightOnRectangleIcon, UserCircleIcon } from '@heroicons/react/20/solid'
+import Link from "next/link";
 
 export default function Header({ children }) {
 
     return (
         <div className='w-full fixed shadow-md top-0 left-0 right-0 z-50 bg-[#ffffffbd] dark:bg-[#1e293be0] backdrop-blur-sm flex justify-between h-16 py-1 px-4 border-b border-slate-300 dark:border-slate-700'>
-            <div className='flex items-center gap-2'>
-                <Image
-                    src="/images/logo.svg"
-                    alt="Logo"
-                    className=""
-                    width={24}
-                    height={24}
-                    priority
-                />
-                <span className='text-sm font-bold text-black dark:text-white'>Instagram</span>
-            </div>
+            <Link href={'/flow'}>
+                <div className='flex items-center gap-2 mt-4'>
+                    <Image
+                        src="/images/logo.svg"
+                        alt="Logo"
+                        className=""
+                        width={24}
+                        height={24}
+                        priority
+                    />
+                    <span className='text-sm font-bold text-black dark:text-white'>Instagram</span>
+                </div>
+            </Link>
+
             <Menu as="div" className="relative flex items-center">
                 <div>
                     <Menu.Button className="inline-flex w-full justify-center items-center rounded-full bg-violet-700 p-2 hover:bg-opacity-50">
