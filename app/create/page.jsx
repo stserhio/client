@@ -78,7 +78,7 @@ export default function Create() {
             uploadedFiles.map((file, index) => (
                 <div
                     key={index}
-                    className={`relative ${draggedIndex === index ? 'dragged' : ''}`}
+                    className={`relative`}
                     draggable={true}
                     onDragStart={() => handleDragStart(index)}
                     onDragOver={(e) => e.preventDefault()}
@@ -106,7 +106,7 @@ export default function Create() {
         <div className='grid grid-cols-1 w-full p-4 gap-4'>
             <form className='grid mt-4 gap-4'>
                 <div className='grid md:flex gap-6'>
-                    <button className='flex gap-4 items-center justify-center rounded-md bg-slate-300 dark:bg-slate-700 text-white \
+                    <button className='flex gap-4 hover:drop-shadow-xl items-center justify-center rounded-md bg-slate-300 dark:bg-slate-700 text-white \
                     bg-gradient-to-r from-amber-500 dark:from-purple-600 from-0% via-orange-600 dark:via-cyan-600  \
                     via-30% via-pink-500 dark:via-blue-500 via-60% to-fuchsia-700 dark:to-violet-700 to-100% \
                     dark:text-white p-4 border-2 border-slate-400 dark:border-slate-600 \
@@ -152,11 +152,11 @@ export default function Create() {
 
             </form>
             <button
-                className='scale-100 mt-4 w-full hover:scale-105 hover:drop-shadow-xl ease-in-out duration-300 py-3 px-4 rounded-md \
+                className='scale-100 mt-4 w-full hover:drop-shadow-xl ease-in-out duration-300 py-3 px-4 rounded-md \
                 bg-gradient-to-r from-amber-500 dark:from-purple-600 from-0% via-orange-600 dark:via-cyan-600 via-30% via-pink-500 dark:via-blue-500 via-60% to-fuchsia-700 dark:to-violet-700 to-100% \
                 text-white text-lg'
                 onClick={() => {
-                    handlerCreate(); // Вызываем ваш обработчик
+                    handlerCreate()
                 }}
             >
                 Создать
