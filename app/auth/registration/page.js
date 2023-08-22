@@ -9,16 +9,27 @@ import { useRouter } from 'next/navigation'
 export default function Registration() {
 
     const [showModal, setShowModal] = useState(false)
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const [errFirstName, setErrFirstName] = useState('eee')
+    const [errLastName, setErrLastName] = useState('')
+    const [errEmail, setErrEmail] = useState('')
+    const [errPassword, setErrPassword] = useState('')
+
+
+
     const router = useRouter()
 
     const handlerModalButton = () => {
         setShowModal(false)
         router.push('/auth/login')
-        // redirect('https://instagram.lern.dev/auth/login','push')
     }
 
-    const handlerRegistration = () => {
-    
+    const handlerRegistration = (e) => {
+        e.preventDefault()
         setShowModal(true);
     }
 
@@ -47,20 +58,52 @@ export default function Registration() {
                             />
                             <span className='text-lg font-bold text-black dark:text-white'>Instagram</span>
                         </div>
-                        <form className='grid mt-4 gap-4'>
-                            <input className='bg-slate-100 dark:bg-slate-700 text-black dark:text-white py-2 px-4 rounded-md' type='text' name="firstName" placeholder='Имя' />
-                            <input className='bg-slate-100 dark:bg-slate-700 text-black dark:text-white py-2 px-4 rounded-md' type='text' name="lastName" placeholder='Фамилия' />
-                            <input className='bg-slate-100 dark:bg-slate-700 text-black dark:text-white py-2 px-4 rounded-md' type='email' name="email" placeholder='example@email.com' />
-                            <input className='bg-slate-100 dark:bg-slate-700 text-black dark:text-white py-2 px-4 rounded-md' type='password' name="password" placeholder='Пароль' />
+                        <form className='grid mt-4 gap-6' onSubmit={handlerRegistration}>
+                            <div>
+                                <input
+                                    className='w-full bg-slate-100 dark:bg-slate-700 text-black dark:text-white py-2 px-4 rounded-md'
+                                    type='text'
+                                    name="firstName"
+                                    placeholder='Имя'
+                                    required={true}
+                                    value={firstName}
+                                    onChange={(event)=> {setFirstName(event.target.value)}}/>
+                                {errFirstName && <div className='absolute text-red-500 text-[10px]'>Длина не должна быть более 30 и не менее 3 символов</div>}
+                            </div>
+
+                            <input
+                                className='bg-slate-100 dark:bg-slate-700 text-black dark:text-white py-2 px-4 rounded-md'
+                                type='text'
+                                name="lastName"
+                                placeholder='Фамилия'
+                                required={true}
+                                value={lastName}
+                                onChange={(event)=> {setLastName(event.target.value)}}/>
+                            <input
+                                className='bg-slate-100 dark:bg-slate-700 text-black dark:text-white py-2 px-4 rounded-md'
+                                type='email'
+                                name="email"
+                                placeholder='example@email.com'
+                                required={true}
+                                value={email}
+                                onChange={(event)=> {setEmail(event.target.value)}}/>
+                            <input
+                                className='bg-slate-100 dark:bg-slate-700 text-black dark:text-white py-2 px-4 rounded-md'
+                                type='password'
+                                name="password"
+                                placeholder='Пароль'
+                                required={true}
+                                value={password}
+                                onChange={(event)=> {setPassword(event.target.value)}}/>
+                            <button
+                                className='scale-100 mt-4 w-full hover:scale-105 hover:drop-shadow-xl ease-in-out duration-300 py-3 px-4 rounded-md \
+                            bg-gradient-to-r from-amber-500 dark:from-purple-600 from-0% via-orange-600 dark:via-cyan-600 via-30% via-pink-500 dark:via-blue-500 via-60% to-fuchsia-700 dark:to-violet-700 to-100% \
+                            text-white text-lg'
+                                type='submit'
+                            >
+                                Зарегистрироваться
+                            </button>
                         </form>
-                        <button 
-                            className='scale-100 mt-4 w-full hover:scale-105 hover:drop-shadow-xl ease-in-out duration-300 py-3 px-4 rounded-md \
-                            bg-gradient-to-r from-amber-500 dark:from-purple-600 from-0% via-orange-600 dark:via-cyan-600 via-30% via-pink-500 dark:via-blue-500 via-60% to-fuchsia-700 dark:to-violet-700 to-100% \ 
-                            text-white text-lg' 
-                            onClick={handlerRegistration}
-                        >
-                            Зарегистрироваться
-                        </button>
                         <div className='w-full border-b-2 border-slate-200 dark:border-slate-700 mt-6 flex justify-center'>
                             <span className='bg-white dark:bg-slate-800 p-2 -mb-[20px]'>OR</span>
                         </div>
