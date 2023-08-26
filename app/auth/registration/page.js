@@ -130,6 +130,7 @@ export default function Registration() {
                             <span className='text-lg font-bold text-black dark:text-white'>Instagram</span>
                         </div>
                         <form className='grid mt-4 gap-6' onSubmit={handlerRegistration}>
+
                             <div className='relative w-full'>
                                 <input
                                     className={`${errFirstName ? 'border-red-500 ' : 'border-transparent'} border bg-slate-100 dark:bg-slate-700 text-black dark:text-white py-2 px-4 rounded-md w-full`}
