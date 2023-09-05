@@ -23,14 +23,28 @@ export const authOptions = {
                         email: credentials?.email,
                         password: credentials?.password,
                     }),
+
+
                 })
 
-                if(res.status >= 400){
+                if(res.status !== 200)return null;
+                const user = await res.json()
+
+                if(user){
+                    return {
+                        email: user.email,
+                        name: user.firstName + '' + user.lastName,
+                        image: user.avatar,
+                        token: user.token,
+                        jti: user.jti,
+                    }
+                }
+
+                else{
                     return null
                 }
 
-                const user = await res.json()
-                return user
+
             },
         }),
         GoogleProvider({

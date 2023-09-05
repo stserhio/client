@@ -1,17 +1,22 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+        images: {
+            remotePatterns: [
+                {
+                    protocol: 'https',
+                    hostname: 'instagram.lern.dev',
+                    port: '',
+                    pathname: '/storage/**',
+                },
+                {
+                    protocol: 'https',
+                    hostname: 'lh3.googleusercontent.com',
+                    port: '',
+                }
+            ],
+        },
+}
 
 module.exports = nextConfig
 
-// module.exports = {
-//     images: {
-//         remotePatterns: [
-//             {
-//                 protocol: 'https',
-//                 hostname: 'instagram.lern.dev',
-//                 port: '3000',
-//                 pathname: '/https://instagram.lern.dev/storage/users/51/gallery/',
-//             },
-//         ],
-//     },
-// }
+
